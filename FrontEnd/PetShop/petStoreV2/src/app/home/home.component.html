@@ -1,0 +1,26 @@
+<p>home works! cuz im here</p>
+<div *ngIf = "greeterDiv">
+
+        <label for="yourName">Name?</label>
+        <input type="text" id="yourName" [(ngModel)] = "name">
+
+        <button (click) = "submitName()">submit</button>
+
+</div>
+
+<h2 *ngIf = "!greeterDiv" Welcome, {{name}}>
+</h2>
+
+<div *ngFor = "let info of objArray" class="todo-card" [hidden] = "hiddenToggle">
+
+    <h4>Name: {{info.username}}</h4>
+    <h4>Status: {{info.admin}}</h4>
+
+    <label for="updateBox">Update?</label>
+
+    <input id="updateBox" [(ngModel)] = "info.admin">
+
+    <button (click) = "toggleStatus(info.id)">OK</button>
+
+    <button (click) = "toggleVisibility">Go Inviz</button>
+</div>
