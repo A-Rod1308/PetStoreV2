@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { LoginService } from '../login.service';
+import { Component, Input, OnInit } from '@angular/core';
+import { LoginService } from '../services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -8,26 +8,29 @@ import { LoginService } from '../login.service';
   providers: [LoginService]
 })
 export class LoginComponent implements OnInit {
-
-  infoReceived1: string[]=[];
-  infoReceived2: string[]=[];
-  infoReceived3: string[]=[];
-
-  getInfoFromService1(){
-    this.infoReceived1 = this.loginservice.getInfo1()
-  }
-  getInfoFromService2(){
-    this.infoReceived2 = this.loginservice.getInfo2()
-  }
-  getInfoFromService3(){
-    this.infoReceived3 = this.loginservice.getInfo3()
+  logCred(username: string, password :string){
+    console.log(username + " " + password)
   }
 
-  constructor(private loginservice: LoginService) {}
+  logIn(username: string, password: string, _http: LoginService){
+    //let u2 = _http.getLoginData().subscribe()
+    let p2 = "password"
+    let out = "";
+
+    if(username == u2 && password == p2){
+      out = "Loging In"
+    }else{
+      if(username != u2){}
+    }
+    
+    if(password == p2){}
+
+    console.log(out)
+
+  }
+
+  constructor(){}
 
   ngOnInit(): void {
-  }
-  updateInfo(frm: any){
-    this.loginservice.addInfo(frm.value.location)
   }
 }

@@ -65,6 +65,7 @@
                     type="text"
                     class="form-control"
                     name="username"
+                    #username
                     placeholder="username"
                   />
                 </div>
@@ -74,10 +75,15 @@
                       ></span>
                   </div>
                   <input
+                  type="text"
+                    class="form-control"
+                    name="password"
+                    #password
+                    placeholder="password"
                   />
                 </div><br>
                 <div class="form-group">
-                  <input>
+                  <button (click)="logCred(username.value, password.value)">Display</button>
                 </div>
                 <br>
                 <div class="text-danger text-center" >Incorrect login, please try again.</div>
@@ -136,7 +142,7 @@
 
 
 
-<!--         --         -->
+<!--         --         
 <form #frm = "ngForm"(ngSubmit)="updateInfo(frm)">
     <div class="">
         <input type ="text" name="location" value="" ngModel>
@@ -152,4 +158,4 @@
     <li *ngFor = "let info of infoReceived1" class ="list-group-ingo">{{info}}</li>
     <li *ngFor = "let info of infoReceived2" class ="list-group-ingo">{{info}}</li>
     <li *ngFor = "let info of infoReceived3" class ="list-group-ingo">{{info}}</li>
-</ul>>
+</ul> -->
